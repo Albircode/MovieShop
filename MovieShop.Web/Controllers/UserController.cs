@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieShop.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,17 +7,13 @@ using System.Threading.Tasks;
 
 namespace MovieShop.Web.Controllers
 {
-    public class MoviesController1 : Controller
+    public class UserController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Create(User user)
         {
             return View();
         }
-        public IActionResult MovieByGenre(int genreId)
-        {
-            return View();
-        }
-        public IActionResult Detail(int movieId)
+        public IActionResult Detail(int userId)
         {
             return View();
         }

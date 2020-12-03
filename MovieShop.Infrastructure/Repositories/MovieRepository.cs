@@ -31,18 +31,18 @@ namespace MovieShop.Infrastructure.Repositories
             var movies = await _DBContext.Movie.OrderByDescending(m => m.Revenue).Take(50).ToListAsync();
             return movies;
         }
-        //public override async Task<Movie> GetByIdAsync(int id)
-        //{
-        //    var movie = await _DBContext.Movie
-        //                                .Include(m => m.MovieCasts).ThenInclude(m => m.Cast).Include(m => m.Genres)
-        //                                .ThenInclude(m => m.Genre)
-        //                                .FirstOrDefaultAsync(m => m.Id == id);
-        //    if (movie == null) return null;
-        //    var movieRating = await _DBContext.Review.Where(r => r.MovieId == id).DefaultIfEmpty()
-        //                                      .AverageAsync(r => r == null ? 0 : r.Rating);
-        //    if (movieRating > 0) movie.Rating = movieRating;
+        public override async Task<Movie> GetByIdAsync(int id)
+        {
+            var movie = await _DBContext.Movie
+                                        .Include(m => m.MovieCasts).ThenInclude(m => m.Cast).Include(m => m.Genres)
+                                        .ThenInclude(m => m.Name)
+                                        .FirstOrDefaultAsync(m => m.Id == id);
+            if (movie == null) return null;
+            var movieRating = await _DBContext.Review.Where(r => r.MovieId == id).DefaultIfEmpty()
+                                              .AverageAsync(r => r == null ? 0 : r.Rating);
+            //if (movieRating > 0) movie.Rating = movieRating;
 
-        //    return movie;
-        //}
+            return movie;
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using MovieShop.Core.models;
+using MovieShop.Core.models.Request;
 using MovieShop.Core.models.Response;
 
 

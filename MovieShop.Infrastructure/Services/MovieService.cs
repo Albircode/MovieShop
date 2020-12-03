@@ -1,5 +1,6 @@
 ﻿using MovieShop.Core.Entities;
 using MovieShop.Core.models;
+using MovieShop.Core.models.Request;
 using MovieShop.Core.models.Response;
 using MovieShop.Core.RepositoryInterfaces;
 using MovieShop.Core.SeviceInterfaces;
@@ -127,6 +128,8 @@ namespace MovieShop.Infrastructure.Services
         {
             throw new NotImplementedException();
         }
+
+       
 
         //public Task<MovieDetailsResponseModel> CreateMovie(MovieCreateRequest movieCreateRequest)
         //{

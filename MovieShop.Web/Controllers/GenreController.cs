@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieShop.Web.Controllers
 {
-    public class GenreController1 : Controller
+    public class GenreController : Controller
     {
         public IActionResult Detail(int castId)
         {
